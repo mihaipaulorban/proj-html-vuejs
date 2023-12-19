@@ -1,10 +1,12 @@
 <script>
 import HeaderNav from './HeaderNav.vue';
+import HeaderSlider from './HeaderSlider.vue';
 
 export default {
   name: 'AppHeader',
   components: {
     HeaderNav,
+    HeaderSlider,
   },
 };
 </script>
@@ -16,6 +18,7 @@ export default {
       <HeaderNav />
     </div>
   </header>
+  <HeaderSlider />
 </template>
 
 <style scoped lang="scss">
