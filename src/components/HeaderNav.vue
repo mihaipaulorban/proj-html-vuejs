@@ -22,11 +22,11 @@ export default {
 </script>
 
 <template>
-  <nav class="navbar">
+  <nav>
     <ul class="navbar-nav d-flex flex-row list-unstyled">
       <li v-for="icon in icons" :key="icon.name" class="nav-item">
         <a
-          class="nav-link d-flex flex-column p-3"
+          class="nav-link d-flex flex-column"
           @mouseover="() => toggleHover(icon.name, true)"
           @mouseleave="() => toggleHover(icon.name, false)"
         >
@@ -41,12 +41,15 @@ export default {
 <style scoped lang="scss">
 @use '../assets/scss/partials/variables' as *;
 .navbar-nav {
+  padding: 0;
+  margin: 0;
   .nav-item {
     cursor: pointer;
 
     .nav-link {
       background-color: transparent;
       transition: background-color 0.3s ease;
+      padding: 40px 20px;
 
       &:hover {
         background-color: $color-secondary;
@@ -56,7 +59,7 @@ export default {
       img {
         transition: opacity 0.3s ease;
         align-self: center;
-        margin-bottom: 0.5rem;
+        margin: 0;
       }
     }
   }

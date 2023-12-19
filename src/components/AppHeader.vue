@@ -10,7 +10,7 @@ export default {
 </script>
 
 <template>
-  <header class="d-flex justify-content-center align-items-start">
+  <header class="d-flex justify-content-center">
     <div class="d-flex justify-content-between header-container p-0">
       <img src="../../public/logo.png" alt="logo" />
       <HeaderNav />
