@@ -44,6 +44,16 @@ export default {
           class="d-block w-100"
           alt="First slide"
         />
+        <img
+          src="../../public/img/slider_slide1_img1.png"
+          class="slide-img"
+          alt="Slide 1 Image 1"
+        />
+        <img
+          src="../../public/img/slider_slide1_img2.png"
+          class="slide-img-2"
+          alt="Slide 1 Image 2"
+        />
       </div>
       <!-- Slide 2 -->
       <div class="carousel-item">
@@ -52,6 +62,16 @@ export default {
           class="d-block w-100"
           alt="Second slide"
         />
+        <img
+          src="../../public/img/slider_slide2_img1.png"
+          class="slide-img"
+          alt="Slide 2 Image 1"
+        />
+        <img
+          src="../../public/img/slider_slide2_img2.png"
+          class="slide-img-2"
+          alt="Slide 2 Image 2"
+        />
       </div>
       <!-- Slide 3 -->
       <div class="carousel-item">
@@ -59,6 +79,16 @@ export default {
           src="../../public/backgrounds/slider_slide3_background.png"
           class="d-block w-100"
           alt="Third slide"
+        />
+        <img
+          src="../../public/img/slider_slide3_img1.png"
+          class="slide-img"
+          alt="Slide 3 Image 1"
+        />
+        <img
+          src="../../public/img/slider_slide3_img2.png"
+          class="slide-img-2"
+          alt="Slide 3 Image 2"
         />
       </div>
     </div>
@@ -82,9 +112,24 @@ export default {
 
 // Stili per il background dello slider
 .carousel-item {
-  img {
+  position: relative;
+  img.d-block {
     width: 100%;
     height: 600px;
+  }
+  img.slide-img {
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 370px;
+    left: 580px;
+  }
+  img.slide-img-2 {
+    width: 200px;
+    position: absolute;
+    z-index: 1;
+    top: 380px;
+    right: 280px;
   }
 }
 </style>
