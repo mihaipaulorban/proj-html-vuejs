@@ -5,11 +5,14 @@ import MainBanner from './MainBanner.vue';
 // Sezione Welcome
 import MainWelcome from './MainWelcome.vue';
 
+import MainCarousel from './MainCarousel.vue';
+
 export default {
   name: 'AppMain',
   components: {
     MainBanner,
     MainWelcome,
+    MainCarousel,
   },
 };
 </script>
