@@ -54,7 +54,9 @@ export default {
           class="slide-img-2"
           alt="Slide 1 Image 2"
         />
+        <div class="carousel-caption">Playing toghether</div>
       </div>
+
       <!-- Slide 2 -->
       <div class="carousel-item">
         <img
@@ -72,7 +74,9 @@ export default {
           class="slide-img-2"
           alt="Slide 2 Image 2"
         />
+        <div class="carousel-caption">Smart Games</div>
       </div>
+
       <!-- Slide 3 -->
       <div class="carousel-item">
         <img
@@ -90,23 +94,39 @@ export default {
           class="slide-img-2"
           alt="Slide 3 Image 2"
         />
+        <div class="carousel-caption">Learning & Fun</div>
       </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
+@use '../assets/scss/partials/variables' as *;
+@import url('https://fonts.googleapis.com/css2?family=Indie+Flower&display=swap');
+
+// Stili Testo slide
+.carousel-caption {
+  position: absolute;
+  top: 50%;
+  left: 30%;
+  transform: translate(-50%, -50%);
+  font-family: 'Indie Flower', cursive;
+  font-size: 2rem;
+  color: rgba(205, 205, 205, 0.486);
+  text-align: center;
+}
+
 // Stili per il pulsante dello slider
+
 .carousel-indicators button {
   width: 40px;
   height: 10px;
   margin: 0 5px;
-  border: solid 2px #fe6601;
+  border: solid 2px $color-secondary;
   transition: all 0.5s;
 }
 
 .carousel-indicators .active {
-  background-color: #ffffff;
   transform: translateY(-20px);
 }
 
@@ -128,7 +148,7 @@ export default {
     width: 200px;
     position: absolute;
     z-index: 1;
-    top: 380px;
+    top: 390px;
     right: 280px;
   }
 }

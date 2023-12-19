@@ -1,6 +1,6 @@
 import { reactive } from 'vue';
 
-// Icone Header
+// Icone Nav Header
 export const headerIcons = [
   {
     icon: 'public/HeaderIcons/home.png',
@@ -43,5 +43,29 @@ export const headerIcons = [
     altIcon: 'public/HeaderIcons/envelope-2.png',
     name: 'Contact',
     hover: false,
+  },
+];
+
+// Icone sezione Welcome Main
+export const welcomeIcons = [
+  {
+    icon: 'public/MainIcons/schoolbag_alt.png',
+    name: 'Morbi Etos',
+    text: 'Praesent interdum est gravida vehicula est node maecenas loareet morbi a dosis luctus novum est praesent.',
+  },
+  {
+    icon: 'public/MainIcons/stroller_alt.png',
+    name: 'Congue Gravida',
+    text: 'Elipsis magna a terminal nulla elementum morbi elite forte maecenas est magna etos interdum vitae est.',
+  },
+  {
+    icon: 'public/MainIcons/globe_alt.png',
+    name: 'Maecenas Node',
+    text: 'Praesent interdum est gravida vehicula est node maecenas loareet morbi a dosis luctus novum est praesent.',
+  },
+  {
+    icon: 'public/MainIcons/bell_alt.png',
+    name: 'Praesent Morbi',
+    text: 'Elipsis magna a terminal nulla elementum morbi elite forte maecenas est magna etos interdum vitae est.',
   },
 ];

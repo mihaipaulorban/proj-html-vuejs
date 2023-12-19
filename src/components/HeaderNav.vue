@@ -8,7 +8,7 @@ export default {
     // Aggiungo rettivitá con ref
     const icons = ref(headerIcons);
 
-    // Cambia lo stato di hover
+    // Cambia lo stato di hover dell'icona
     function toggleHover(iconName, value) {
       const icon = icons.value.find((i) => i.name === iconName);
       if (icon) {
