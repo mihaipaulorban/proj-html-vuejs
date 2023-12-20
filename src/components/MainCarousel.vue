@@ -75,7 +75,6 @@ export default {
 
   .my-carousel-active {
     position: relative;
-
     img {
       width: 90%;
       height: auto;

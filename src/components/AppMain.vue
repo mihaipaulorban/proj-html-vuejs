@@ -2,6 +2,7 @@
 import MainBanner from './MainBanner.vue';
 import MainWelcome from './MainWelcome.vue';
 import MainOverview from './MainOverview.vue';
+import MainSlider from './MainSlider.vue';
 
 export default {
   name: 'AppMain',
@@ -9,6 +10,7 @@ export default {
     MainBanner,
     MainWelcome,
     MainOverview,
+    MainSlider,
   },
 };
 </script>
@@ -26,6 +28,9 @@ export default {
 
   <!-- Sezione Overview con carosello -->
   <MainOverview />
+
+  <!-- Slider con info -->
+  <MainSlider />
 </template>
 
 <style scoped lang="scss"></style>
