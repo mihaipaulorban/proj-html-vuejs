@@ -33,6 +33,7 @@ export default {
 
 .welcome-container {
   width: 100%;
+  margin-bottom: 40px;
 
   .welcome-title {
     width: 60%;
