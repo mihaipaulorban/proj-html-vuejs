@@ -1,18 +1,14 @@
 <script>
-// Banner riusabile
 import MainBanner from './MainBanner.vue';
-
-// Sezione Welcome
 import MainWelcome from './MainWelcome.vue';
-
-import MainCarousel from './MainCarousel.vue';
+import MainOverview from './MainOverview.vue';
 
 export default {
   name: 'AppMain',
   components: {
     MainBanner,
     MainWelcome,
-    MainCarousel,
+    MainOverview,
   },
 };
 </script>
@@ -27,6 +23,9 @@ export default {
 
   <!-- Sezione Welcome con icone -->
   <MainWelcome />
+
+  <!-- Sezione Overview con carosello -->
+  <MainOverview />
 </template>
 
 <style scoped lang="scss"></style>

@@ -1,120 +1,131 @@
 <script>
 export default {
   name: 'MainCarousel',
+  data() {
+    return {
+      pics: [
+        {
+          image: '../../public/img/gallery_07-690x506.jpg',
+        },
+        {
+          image: '../../public/img/gallery_08-690x506.jpg',
+        },
+        {
+          image: '../../public/img/gallery_01-690x506.jpg',
+        },
+      ],
+      currentIndex: 0,
+    };
+  },
+  methods: {
+    next() {
+      this.currentIndex = (this.currentIndex + 1) % this.pics.length;
+    },
+    prev() {
+      this.currentIndex =
+        (this.currentIndex + this.pics.length - 1) % this.pics.length;
+    },
+    changeImage(index) {
+      this.currentIndex = index;
+    },
+  },
 };
 </script>
 
 <template>
-  <div class="contain">
-    <div
-      id="carouselWithThumbnails"
-      class="carousel slide"
-      data-bs-ride="carousel"
-    >
-      <!-- Slides principali -->
-      <div class="carousel-inner">
-        <div class="carousel-item active">
-          <img
-            src="../../public/img/gallery_01-690x506.jpg"
-            class="d-block w-100"
-            alt="First slide"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="../../public/img/gallery_07-690x506.jpg"
-            class="d-block w-100"
-            alt="Second slide"
-          />
-        </div>
-        <div class="carousel-item">
-          <img
-            src="../../public/img/gallery_08-690x506.jpg"
-            class="d-block w-100"
-            alt="Third slide"
-          />
-        </div>
+  <div class="my-carousel-container">
+    <div class="my-carousel-active">
+      <img
+        :src="pics[currentIndex].image"
+        class="d-block w-100"
+        :alt="'Slide ' + (currentIndex + 1)"
+      />
+      <!-- Pulsanti di navigazione come div -->
+      <div class="my-carousel-control my-carousel-prev" @click="prev">
+        <img src="../../public/MainIcons/slider_previous.png" alt="Previous" />
       </div>
-      <!-- Controlli del carosello -->
-      <button
-        class="carousel-control-prev"
-        type="button"
-        data-bs-target="#carouselWithThumbnails"
-        data-bs-slide="prev"
+      <div class="my-carousel-control my-carousel-next" @click="next">
+        <img src="../../public/MainIcons/slider_next.png" alt="Next" />
+      </div>
+    </div>
+    <div class="my-carousel-thumbnails">
+      <div
+        v-for="(pic, index) in pics"
+        :key="index"
+        class="my-thumb"
+        :class="{ active: currentIndex === index }"
+        @click="changeImage(index)"
       >
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-      </button>
-      <button
-        class="carousel-control-next"
-        type="button"
-        data-bs-target="#carouselWithThumbnails"
-        data-bs-slide="next"
-      >
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-      </button>
-      <!-- Miniature -->
-      <div class="carousel-thumbnails">
-        <ol class="carousel-indicators">
-          <li
-            data-bs-target="#carouselWithThumbnails"
-            data-bs-slide-to="0"
-            class="active"
-          >
-            <img
-              src="../../public/img/gallery_01-690x506.jpg"
-              alt="First slide thumbnail"
-            />
-          </li>
-          <li data-bs-target="#carouselWithThumbnails" data-bs-slide-to="1">
-            <img
-              src="../../public/img/gallery_07-690x506.jpg"
-              alt="Second slide thumbnail"
-            />
-          </li>
-          <li data-bs-target="#carouselWithThumbnails" data-bs-slide-to="2">
-            <img
-              src="../../public/img/gallery_08-690x506.jpg"
-              alt="Third slide thumbnail"
-            />
-          </li>
-        </ol>
+        <img
+          :src="pic.image"
+          class="d-block w-100"
+          :alt="'Thumbnail ' + (index + 1)"
+        />
       </div>
     </div>
   </div>
 </template>
 
 <style scoped lang="scss">
-.contain {
-  width: 600px;
-  height: 600px;
-}
-.carousel-inner {
-  /* width: 400px; */
-}
+@use '../assets/scss/partials/variables' as *;
+.my-carousel-container {
+  position: relative;
+  width: 95%;
+  margin: auto;
 
-.carousel-thumbnails {
-  text-align: center;
-  padding-top: 10px;
-}
+  .my-carousel-active {
+    position: relative;
 
-.carousel-thumbnails .carousel-indicators li {
-  display: inline-block;
-  margin: 0 10px;
-}
+    img {
+      width: 90%;
+      height: auto;
+      object-fit: cover;
+    }
 
-.carousel-thumbnails .carousel-indicators img {
-  width: 300px;
-  height: auto;
-  opacity: 0.5;
-  cursor: pointer;
+    // Aggiungi i pulsanti di navigazione
+    .my-carousel-control {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      z-index: 5;
+      background: none;
+      border: none;
+      cursor: pointer;
 
-  &:hover {
-    opacity: 0.75;
+      img {
+        width: 30px;
+        height: 30px;
+      }
+    }
+    .my-carousel-prev {
+      left: 0px;
+      background-color: $color-secondary;
+    }
+    .my-carousel-next {
+      right: 0px;
+      background-color: $color-secondary;
+    }
   }
-}
 
-.carousel-thumbnails .carousel-indicators .active img {
-  opacity: 1;
-  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.5);
+  .my-carousel-thumbnails {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5px;
+
+    .my-thumb {
+      width: calc(95% / 3);
+      cursor: pointer;
+      padding: 5px 0;
+
+      img {
+        height: 120px;
+        object-fit: cover;
+      }
+
+      &.active {
+        border-bottom: 2px solid $color-secondary;
+      }
+    }
+  }
 }
 </style>

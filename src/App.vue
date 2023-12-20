@@ -19,7 +19,6 @@ export default {
   <AppHeader />
   <AppMain />
   <AppFooter />
-  <MainCarousel />
 </template>
 
 <style scoped lang="scss">

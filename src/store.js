@@ -69,3 +69,22 @@ export const welcomeIcons = [
     text: 'Elipsis magna a terminal nulla elementum morbi elite forte maecenas est magna etos interdum vitae est.',
   },
 ];
+
+// immagini carosello
+export const carouselImg = reactive([
+  {
+    src: 'img/gallery_01-690x506.jpg',
+    thumbnailSrc: 'img/gallery_01-690x506.jpg',
+    alt: 'Immagine 1',
+  },
+  {
+    src: 'img/gallery_07-690x506.jpg',
+    thumbnailSrc: 'img/gallery_07-690x506.jpg',
+    alt: 'Immagine 2',
+  },
+  {
+    src: 'img/gallery_08-690x506.jpg',
+    thumbnailSrc: 'img/gallery_08-690x506.jpg',
+    alt: 'Immagine 3',
+  },
+]);
