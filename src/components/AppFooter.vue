@@ -1,11 +1,18 @@
 <script>
+import GoogleMapComponent from './GoogleMapComponent.vue';
+import FooterContactus from './FooterContactus.vue';
 export default {
   name: 'AppFooter',
+  components: {
+    GoogleMapComponent,
+    FooterContactus,
+  },
 };
 </script>
 
 <template>
-  <h2>Footer</h2>
+  <GoogleMapComponent />
+  <FooterContactus />
 </template>
 
 <style scoped lang="scss"></style>
