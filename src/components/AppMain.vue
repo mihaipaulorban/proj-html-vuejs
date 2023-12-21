@@ -3,6 +3,7 @@ import MainBanner from './MainBanner.vue';
 import MainWelcome from './MainWelcome.vue';
 import MainOverview from './MainOverview.vue';
 import MainSlider from './MainSlider.vue';
+import MainClasses from './MainClasses.vue';
 
 export default {
   name: 'AppMain',
@@ -11,6 +12,7 @@ export default {
     MainWelcome,
     MainOverview,
     MainSlider,
+    MainClasses,
   },
 };
 </script>
@@ -31,6 +33,9 @@ export default {
 
   <!-- Slider con info -->
   <MainSlider />
+
+  <!-- Sezione Our CLasses -->
+  <MainClasses />
 </template>
 
 <style scoped lang="scss"></style>
