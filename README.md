@@ -1,3 +1,3 @@
 # Project Fable
 
-Progetto di layout e componimento struttura sito, info in arrivo...
+Progetto Fable per l'istruzzione di bambini e la formazione intelligente degli stessi.
