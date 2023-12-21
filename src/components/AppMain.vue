@@ -4,6 +4,8 @@ import MainWelcome from './MainWelcome.vue';
 import MainOverview from './MainOverview.vue';
 import MainSlider from './MainSlider.vue';
 import MainClasses from './MainClasses.vue';
+import MainGoals from './MainGoals.vue';
+import MainGallery from './MainGallery.vue';
 
 export default {
   name: 'AppMain',
@@ -13,6 +15,8 @@ export default {
     MainOverview,
     MainSlider,
     MainClasses,
+    MainGoals,
+    MainGallery,
   },
 };
 </script>
@@ -36,6 +40,19 @@ export default {
 
   <!-- Sezione Our CLasses -->
   <MainClasses />
+
+  <!-- Sezione Goals -->
+  <MainGoals />
+
+  <!-- Sezione Gallery -->
+  <MainGallery />
+
+  <!-- banner Gallery -->
+  <MainBanner
+    heading-text="See Our Kindergarten Photo Gallery!"
+    button-text="View Gallery >"
+    background-pattern="../../public/backgrounds/pattern.png"
+  />
 </template>
 
 <style scoped lang="scss"></style>
